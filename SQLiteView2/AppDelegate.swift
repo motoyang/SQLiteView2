@@ -15,8 +15,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
         
         if NSDocumentController.sharedDocumentController().documents.isEmpty {
-            let url = NSURL(fileURLWithPath: "/Users/xt/test/sqlite/Sakila.sqlite3")
-            NSDocumentController.sharedDocumentController().openDocumentWithContentsOfURL(url, display: true) {_,_,_ in return }
+//            let url = NSURL(fileURLWithPath: "/Users/xt/test/sqlite/Sakila.sqlite3")
+//            NSDocumentController.sharedDocumentController().openDocumentWithContentsOfURL(url, display: true) {_,_,_ in return }
+
+            NSDocumentController.sharedDocumentController().openDocument(self)
         }
     }
 
@@ -30,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     // 这个是雨NSApplication的菜单做关联，不是太好，应该关联到view的菜单项
     @IBAction func executeSql(sender: NSMenuItem) {
-        if let mainWnd = NSApplication.sharedApplication().mainWindow {
+        if let mainWnd = NSApplication.sharedApplication().keyWindow {
             let mainWC = mainWnd.windowController as! MainWindowController
             let mainVC = mainWC.contentViewController as! MainViewController
             mainVC.sqlQueryVC.executeSql(sender)
