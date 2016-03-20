@@ -827,7 +827,7 @@
                         <splitViewItem id="DFn-Ks-FEo"/>
                         <splitViewItem id="zv7-eV-cY2"/>
                     </splitViewItems>
-                    <splitView key="splitView" dividerStyle="thin" id="kjW-gH-mew">
+                    <splitView key="splitView" id="kjW-gH-mew">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </splitView>
@@ -1025,7 +1025,7 @@
                         <splitViewItem id="QSp-qp-zhX"/>
                         <splitViewItem id="hVJ-f2-dbW"/>
                     </splitViewItems>
-                    <splitView key="splitView" dividerStyle="thin" id="Mt0-tD-qqH">
+                    <splitView key="splitView" id="Mt0-tD-qqH">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </splitView>
