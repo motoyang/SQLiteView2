@@ -17,6 +17,11 @@ class Document: NSDocument {
         super.init()
         // Add your subclass-specific initialization here.
     }
+
+    // 重载这个属性，避免在退出时出现保存文件对话框
+    override var documentEdited: Bool {
+        return false
+    }
     
     // 读取sqlite3数据库，并赋值到db中
     override func readFromURL(url: NSURL, ofType type: String) throws {
@@ -32,7 +37,8 @@ class Document: NSDocument {
     }
 
     override class func autosavesInPlace() -> Bool {
-        return true
+        // 返回false，避免在sqlQuery view中的的输入导致document被设置为edited状态
+        return false
     }
 
     override func makeWindowControllers() {

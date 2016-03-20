@@ -22,8 +22,15 @@ class SqlQueryViewController: NSViewController {
     @IBAction func executeSql(sender: NSMenuItem) {
         let sql = sqlView.string
         let mainVC = parentViewController?.parentViewController?.parentViewController as! MainViewController
-        
-        let stmt = try! document.db.prepare(sql!)
-        mainVC.queryVC.recordset = stmt.output()
+
+        // 执行sql语句，如果有错误，也在recordset中输出错误信息，偷懒的做法:)
+        do {
+            let stmt = try document.db.prepare(sql!)
+            mainVC.queryVC.recordset = stmt.output()
+        } catch let error as NSError {
+            mainVC.queryVC.recordset = errorToRecordset(error)
+        } catch {
+            NSLog("all error")
+        }
     }
 }

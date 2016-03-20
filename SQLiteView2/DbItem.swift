@@ -17,6 +17,26 @@ func toString<T>(value: T?) -> String {
     return s
 }
 
+func errorToRecordset(error: NSError) -> [[String]] {
+
+    var o = String()
+    if let options = error.localizedRecoveryOptions {
+        for s in options {
+            o += "\(s);"
+        }
+    }
+
+    let r: [[String]] = [
+        ["error name", "error description"],
+        ["localizedDescription", error.localizedDescription],
+        ["localizedRecoveryOptions", o],
+        ["localizedRecoverySuggestion", toString(error.localizedRecoverySuggestion)],
+        ["localizedFailureReason", toString(error.localizedFailureReason)]
+    ]
+
+    return r
+}
+
 extension Statement {
     func output() -> [[String]] {
         
