@@ -29,14 +29,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldOpenUntitledFile(sender: NSApplication) -> Bool {
         return false
     }
-    
-    // 这个是雨NSApplication的菜单做关联，不是太好，应该关联到view的菜单项
-    @IBAction func executeSql(sender: NSMenuItem) {
-        if let mainWnd = NSApplication.sharedApplication().keyWindow {
-            let mainWC = mainWnd.windowController as! MainWindowController
-            let mainVC = mainWC.contentViewController as! MainViewController
-            mainVC.sqlQueryVC.executeSql(sender)
-        }
-    }
 }
 
