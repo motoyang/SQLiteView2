@@ -20,17 +20,26 @@ class SqlQueryViewController: NSViewController {
     }
     
     @IBAction func executeSql(sender: NSMenuItem) {
-        let sql = sqlView.string
-        let mainVC = parentViewController?.parentViewController?.parentViewController as! MainViewController
+        
+        // 剔除字符串中的空格等
+        if let sql = sqlView.string?.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: " \n\r\t")) {
+            
+            // 如果字符串为空，直接返回
+            if sql.isEmpty {
+                return
+            }
+            
+            let mainVC = parentViewController?.parentViewController?.parentViewController as! MainViewController
 
-        // 执行sql语句，如果有错误，也在recordset中输出错误信息，偷懒的做法:)
-        do {
-            let stmt = try document.db.prepare(sql!)
-            mainVC.queryVC.recordset = stmt.output()
-        } catch let error as NSError {
-            mainVC.queryVC.recordset = errorToRecordset(error)
-        } catch {
-            NSLog("all error")
+            // 执行sql语句，如果有错误，也在recordset中输出错误信息，偷懒的做法:)
+            do {
+                let stmt = try document.db.prepare(sql)
+                mainVC.queryVC.recordset = stmt.output()
+            } catch let error as NSError {
+                mainVC.queryVC.recordset = errorToRecordset(error)
+            } catch {
+                NSLog("all error")
+            }
         }
     }
 }
