@@ -678,7 +678,7 @@
                         <splitViewItem id="3Cl-bQ-keL"/>
                         <splitViewItem id="PiQ-6n-7GV"/>
                     </splitViewItems>
-                    <splitView key="splitView" vertical="YES" id="eiQ-cb-xEZ">
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="eiQ-cb-xEZ">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </splitView>
@@ -707,7 +707,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="AXH-1k-khS" viewBased="YES" indentationPerLevel="16" autoresizesOutlineColumn="YES" outlineTableColumn="Ke6-6f-NIn" id="fyc-0W-OwQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="448" height="282"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="0.0"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -734,8 +734,8 @@
                                                                     <rect key="frame" x="2" y="2" width="14" height="14"/>
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSActionTemplate" id="grQ-90-Hb0"/>
                                                                 </imageView>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PSU-0z-O0R">
-                                                                    <rect key="frame" x="21" y="0.0" width="97" height="17"/>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PSU-0z-O0R">
+                                                                    <rect key="frame" x="21" y="0.0" width="338" height="17"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="lsv-N9-1pR">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -1036,7 +1036,7 @@
                         <splitViewItem id="QSp-qp-zhX"/>
                         <splitViewItem id="hVJ-f2-dbW"/>
                     </splitViewItems>
-                    <splitView key="splitView" id="Mt0-tD-qqH">
+                    <splitView key="splitView" dividerStyle="paneSplitter" id="Mt0-tD-qqH">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </splitView>

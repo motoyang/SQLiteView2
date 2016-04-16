@@ -10,6 +10,8 @@ import Cocoa
 
 class MainViewController: NSSplitViewController {
 
+    var sideViewItem: NSSplitViewItem!
+    
     var schemaVC: SchemaViewController!
     var sqlDefineVC: SqlDefineViewController!
     var recordsetVC: RecordsetViewController!
@@ -21,6 +23,7 @@ class MainViewController: NSSplitViewController {
         
         // 调整splitView子窗口的大小
         splitView.adjustSubviews()
+        sideViewItem = splitViewItems[0]
         
         //
         // 如下几行代码，设置几个关键subview的controller
@@ -35,5 +38,13 @@ class MainViewController: NSSplitViewController {
         splitVC = tabVC.tabViewItems[1].viewController as! NSSplitViewController
         sqlQueryVC = splitVC.splitViewItems[0].viewController as! SqlQueryViewController
         queryVC = splitVC.splitViewItems[1].viewController as! RecordsetViewController
+    }
+    
+     func sideView(sender: NSMenuItem) {
+        if splitViewItems.count == 2 {
+            removeSplitViewItem(sideViewItem)
+        } else {
+            insertSplitViewItem(sideViewItem, atIndex: 0)
+        }
     }
 }

@@ -25,8 +25,7 @@ class Document: NSDocument {
     
     // 读取sqlite3数据库，并赋值到db中
     override func readFromURL(url: NSURL, ofType type: String) throws {
-        let startIndex = url.absoluteString.startIndex.advancedBy(7)
-        let path = url.absoluteString.substringFromIndex(startIndex)
+        let path = url.path!
         NSLog(path)
         db = try! Connection(path)
     }
